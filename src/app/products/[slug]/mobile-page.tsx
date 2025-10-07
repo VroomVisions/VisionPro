@@ -1,10 +1,12 @@
 import products from "@/data/products";
 import { notFound } from "next/navigation";
-import dynamic from "next/dynamic";
+import MobileProductDetail from "@/components/mobile/MobileProductDetail";
 
-const MobileProductDetail = dynamic(() => import("@/components/mobile/MobileProductDetail"), { ssr: false });
+interface MobileProductDetailPageProps {
+  params: { slug: string };
+}
 
-export default async function MobileProductDetailPage(props) {
+export default async function MobileProductDetailPage(props: MobileProductDetailPageProps) {
   const { slug } = await props.params;
   const product = products.find((p) => p.slug === slug);
   if (!product) return notFound();

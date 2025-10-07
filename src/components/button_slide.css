@@ -8,7 +8,7 @@
     letter-spacing: 1px;
     cursor: pointer;
     color: #7042f8;
-    background: #181818;
+    background: transparent;
     width: 100%;
     animation: leave 0.8s forwards;
     transition: color 0.8s;
@@ -64,6 +64,6 @@
     }
     to {
         box-shadow: inset 0 0 0 0.01px #7042f8;
-        background: #181818;
+        background: transparent;
     }
 }

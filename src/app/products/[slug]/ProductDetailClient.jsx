@@ -43,11 +43,7 @@ function ProductDetailClient({ slug }) {
   }, [slug]);
 
   if (!productData || !productData.imageUrl) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <span className="text-white text-lg">Loading product details...</span>
-      </div>
-    );
+    return null;
   }
 
   // Safe to use productData now
@@ -186,9 +182,10 @@ function ProductDetailClient({ slug }) {
               </div>
             )}
           </motion.div>
-          {/* Details card section */}
+          {/* Details card section - transparent Contact Information style */}
           <motion.div 
-            className="flex-1 w-full max-w-lg bg-purple-900/30 rounded-2xl shadow-glow p-6 md:p-8 border border-white/10 backdrop-blur-md flex flex-col"
+            className="flex-1 w-full max-w-md bg-purple-900/20 p-6 rounded-lg shadow-glow border border-white/10 flex flex-col"
+            style={{ fontFamily: 'var(--font-geist-sans), Geist, Arial, sans-serif' }}
             variants={staggerParent}
             initial="hidden"
             whileInView="visible"
@@ -225,10 +222,10 @@ function ProductDetailClient({ slug }) {
                 </Badge>
               ))}
             </motion.div>
-            <motion.p className="text-gray-300 mb-4" variants={fadeInUp}>{productData.description}</motion.p>
-            <motion.div className="mb-6" variants={fadeInUp}>
-              <h3 className="font-semibold text-lg mb-2">Key Features</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-300">
+            <motion.p className="text-gray-200 mb-4 text-base leading-relaxed font-normal" style={{textShadow:'0 1px 4px rgba(0,0,0,0.12)'}} variants={fadeInUp}>{productData.description}</motion.p>
+            <motion.div className="mb-4" variants={fadeInUp}>
+              <h3 className="font-semibold text-base mb-1 text-white/90">Key Features</h3>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm">
                 {productData.features?.map((feature, index) => (
                   <li key={index}>{feature}</li>
                 ))}
@@ -236,13 +233,12 @@ function ProductDetailClient({ slug }) {
             </motion.div>
             <motion.div className="flex gap-3 mt-auto" variants={fadeInUp}>
               <Button 
-                variant="outline"
-                className="bg-transparent hover:bg-purple-900/40 border border-white/20 text-white px-6 py-3 rounded-md font-medium shadow-glow"
+                className="w-full py-3 rounded-md font-bold text-base button_slide slide_right transition-all focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2"
+                style={{boxShadow:'0 2px 12px #7042f8cc'}}
                 onClick={handleBuyNow}
               >
                 Buy Now
               </Button>
-              {/* Add to Cart button removed as per user request */}
             </motion.div>
           </motion.div>
         </motion.div>

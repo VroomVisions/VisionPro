@@ -309,20 +309,20 @@ const Checkout: React.FC = () => {
                       )}
                     </div>
                     <Button 
-                      className="w-full bg-gradient-to-r from-[#7f53ac] to-[#657ced] text-white py-3 rounded-md font-semibold shadow-glow border border-white/10 mt-2 flex items-center justify-center gap-2 text-lg tracking-wide" 
+                      className="w-full py-3 rounded-md font-semibold shadow-glow border border-white/10 mt-2 flex items-center justify-center text-lg tracking-wide button_slide slide_right"
                       onClick={handleRazorpayPayment}
                       disabled={paymentStatus === 'processing'}
-                      style={{ minHeight: 33, fontFamily: 'inherit' }}
+                      style={{ minHeight: 33, fontFamily: 'inherit', display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid rgba(255,255,255,0.10)' }}
                     >
-                      <RazorpayLogo />
+                      <span style={{display:'flex',justifyContent:'center',alignItems:'center',width:'100%'}}><RazorpayLogo /></span>
                     </Button>
                     <Button
-                      className="w-full bg-gradient-to-r from-[#003087] to-[#0070ba] text-white py-3 rounded-md font-semibold shadow-glow border border-white/10 mt-2 flex items-center justify-center gap-2 text-lg tracking-wide"
+                      className="w-full py-3 rounded-md font-semibold shadow-glow border border-white/10 mt-2 flex items-center justify-center text-lg tracking-wide button_slide slide_right"
                       onClick={handlePayPalPayment}
                       disabled={paymentStatus === 'processing'}
-                      style={{ minHeight: 33, fontFamily: 'inherit' }}
+                      style={{ minHeight: 33, fontFamily: 'inherit', display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid rgba(255,255,255,0.10)' }}
                     >
-                      <PayPalLogo />
+                      <span style={{display:'flex',justifyContent:'center',alignItems:'center',width:'100%'}}><PayPalLogo /></span>
                     </Button>
                   </div>
                 </div>
